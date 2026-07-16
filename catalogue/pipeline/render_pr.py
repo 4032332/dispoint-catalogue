@@ -31,19 +31,20 @@ def render_table(promos: list[dict]) -> str:
         return "No new candidate promos this week."
 
     lines = [
-        "| Retailer | Offer | Programs | Valid to | Source | Confidence |",
-        "|---|---|---|---|---|---|",
+        "| Retailer | Offer | Code | Programs | Valid to | Source | Confidence |",
+        "|---|---|---|---|---|---|---|",
     ]
     for promo in promos:
         retailer = escape_md(promo.get("retailer", ""))
         offer = escape_md(format_offer(promo))
+        code = escape_md(promo.get("code") or "—")
         programs = escape_md(format_programs(promo))
         valid_to = escape_md(promo.get("validTo", ""))
         source = promo.get("sourceURL", "")
         source_cell = f"[link]({source})" if source else "—"
         confidence = promo.get("_confidence")
         confidence_cell = f"{confidence:.2f}" if isinstance(confidence, (int, float)) else "—"
-        lines.append(f"| {retailer} | {offer} | {programs} | {valid_to} | {source_cell} | {confidence_cell} |")
+        lines.append(f"| {retailer} | {offer} | {code} | {programs} | {valid_to} | {source_cell} | {confidence_cell} |")
 
     return "\n".join(lines)
 
