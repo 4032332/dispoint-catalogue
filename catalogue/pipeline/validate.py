@@ -134,6 +134,10 @@ def validate_promo(promo: dict, index: int) -> list[str]:
     if editorial_note is not None and not isinstance(editorial_note, str):
         errors.append(f"[{index}] editorialNote must be a string or null")
 
+    code = promo.get("code")
+    if code is not None and not isinstance(code, str):
+        errors.append(f"[{index}] code must be a string or null")
+
     return errors
 
 

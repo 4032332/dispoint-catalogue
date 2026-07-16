@@ -40,6 +40,11 @@ DEFAULT_FEEDS = [
     "https://www.ozbargain.com.au/tag/velocity/feed",
     "https://www.ozbargain.com.au/tag/qantas/feed",
     "https://www.ozbargain.com.au/tag/everyday-rewards/feed",
+    # General recent-deals feed: the source of current discount-CODE / voucher deals.
+    # (OzBargain's dedicated coupon/discount-code tags are dead — only old, expired
+    # nodes — so we pull the front-page feed and let normalize.py keep only genuine
+    # coupon/voucher offers and drop one-off product price-drops.)
+    "https://www.ozbargain.com.au/deals/feed",
 ]
 
 DEFAULT_VOTE_THRESHOLD = 15

@@ -34,27 +34,40 @@ ALLOWED_POINTS_TYPES = {"storeRewards", "frequentFlyer"}
 ALLOWED_OFFER_KINDS = {"multiplier", "discount"}
 ALLOWED_CHANNELS = {"online", "inStore", "both", None}
 
-SYSTEM_PROMPT = """You extract Australian points/loyalty and gift-card deals from OzBargain \
-listings into a strict JSON schema for a personal deal-tracking app.
+SYSTEM_PROMPT = """You extract Australian retail deals from OzBargain listings into a strict \
+JSON schema for a personal deal-tracking app. The app tracks two kinds of deal: loyalty/points \
+deals AND discount codes/coupons.
 
-Only extract deals that are genuinely about earning or redeeming LOYALTY/FREQUENT-FLYER \
-POINTS, or a store-specific gift-card multiplier/bonus. If the deal is a generic \
-percentage-off, cashback-only (e.g. ShopBack/TopCashback with no points angle), or \
-otherwise not a points/loyalty deal, return {"skip": true, "reason": "<short reason>"}.
+EXTRACT a deal ONLY if it is EITHER:
+  (a) a LOYALTY/POINTS deal — earning or redeeming loyalty/frequent-flyer points, or a \
+      store gift-card points multiplier/bonus; OR
+  (b) a STORE-WIDE DISCOUNT/COUPON deal — a percentage-off or dollar-off that applies \
+      across a named retailer's range, EITHER via a coupon CODE the shopper enters at \
+      checkout OR a spend-threshold voucher (e.g. "$30 off $150 spend", "20% off \
+      sitewide"). These are the "codes" the app is built to track.
 
-When it IS a points/loyalty deal, return a single JSON object with EXACTLY these fields:
+SKIP (return {"skip": true, "reason": "<short reason>"}) if it is: a one-off price drop \
+on a SINGLE product or model (e.g. "Duracell 4-pack $7.90", "Logitech mouse $49") even at \
+a named retailer — these are NOT codes; cashback-only with no points and no code (e.g. \
+ShopBack/TopCashback); a marketplace/third-party reseller with no clear retailer; \
+price-error/clearance; freebies; or anything too vague to map. When in doubt about \
+whether a discount is store-wide vs a single-product price, SKIP.
+
+Return a single JSON object with EXACTLY these fields:
 {
-  "retailer": string,                 // the retailer/brand name, e.g. "Coles"
+  "retailer": string,                 // the retailer/brand name, e.g. "Coles", "JB Hi-Fi"
   "productOrBrand": string | null,     // what's being purchased, if distinct from retailer
   "programs": string[],                // subset of: everydayRewards, flybuys, qantasFF,
                                         // velocityFF, onePass, pricelineSisterClub, myerOne,
                                         // amexMembershipRewards. Map loosely-named programs
                                         // (e.g. "Qantas Points" -> qantasFF, "Flybuys" -> flybuys).
-                                        // Empty array if no program is identifiable.
-  "pointsType": "storeRewards" | "frequentFlyer",
-  "offerKind": "multiplier" | "discount",
+                                        // EMPTY ARRAY for a pure discount/coupon with no program.
+  "pointsType": "storeRewards" | "frequentFlyer",  // use "storeRewards" for pure discount deals
+  "offerKind": "multiplier" | "discount",  // "multiplier" for points multipliers; "discount" for %/$ off
   "multiplier": number | null,         // e.g. 20.0 for "20x points" — required if offerKind is multiplier
-  "discountText": string | null,       // e.g. "$50 back" — required if offerKind is discount
+  "discountText": string | null,       // e.g. "25% off", "$10 off $100" — required if offerKind is discount
+  "code": string | null,               // the coupon CODE to enter at checkout if one is stated \
+                                        // (e.g. "SAVE20"); null if the deal has no code
   "channel": "online" | "inStore" | "both" | null,
   "editorialNote": string | null,      // one short curator sentence, or null
   "confidence": number                 // 0-1, your confidence this extraction is accurate
@@ -181,6 +194,7 @@ def normalize_candidate(candidate: dict, llm_call) -> dict | None:
         "offerKind": fields["offerKind"],
         "multiplier": fields.get("multiplier"),
         "discountText": fields.get("discountText"),
+        "code": fields.get("code"),
         "channel": fields.get("channel"),
         "validFrom": valid_from,
         "validTo": valid_to,

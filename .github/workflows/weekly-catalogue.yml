@@ -85,3 +85,6 @@ jobs:
           title: "Weekly catalogue update (${{ steps.check.outputs.count }} new candidate promos)"
           body-path: /tmp/pr_body.md
           add-paths: catalogue/catalogue.json
+          # Request the maintainer as reviewer so GitHub sends a weekly "review requested"
+          # notification and the PR sits in their review queue until actioned.
+          reviewers: 4032332

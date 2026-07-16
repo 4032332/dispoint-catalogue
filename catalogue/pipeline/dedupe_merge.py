@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -33,12 +34,20 @@ def normalize_retailer(name: str) -> str:
 
 
 def offer_signature(promo: dict) -> tuple:
+    """A coarse fingerprint for near-duplicate detection. Includes the programs and a
+    *bucketed* offer value (the leading number of the discount text, or the multiplier)
+    rather than the exact wording — so the same underlying deal phrased two slightly
+    different ways (e.g. "1000 bonus Flybuys on $25-$100 TCN" vs "...on select $25-$100
+    TCN") collapses to one signature."""
     offer_kind = promo.get("offerKind")
+    programs = tuple(sorted(promo.get("programs") or []))
     if offer_kind == "multiplier":
-        value = promo.get("multiplier")
+        value: object = promo.get("multiplier")
     else:
-        value = (promo.get("discountText") or "").strip().lower()
-    return (offer_kind, value)
+        text = (promo.get("discountText") or "").lower()
+        nums = re.findall(r"\d+", text)
+        value = nums[0] if nums else text.strip()[:12]
+    return (offer_kind, programs, value)
 
 
 def windows_overlap(a: dict, b: dict) -> bool:
