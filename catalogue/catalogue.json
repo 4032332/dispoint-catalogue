@@ -3,7 +3,9 @@
     "id": "seed-wow-giftcard-20x",
     "retailer": "Woolworths",
     "productOrBrand": "Selected gift cards",
-    "programs": ["everydayRewards"],
+    "programs": [
+      "everydayRewards"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 20.0,
@@ -12,14 +14,16 @@
     "validFrom": "2026-07-14T00:00:00Z",
     "validTo": "2026-07-27T23:59:59Z",
     "sourceURL": "https://www.woolworths.com.au/shop/discover/rewards",
-    "editorialNote": "Classic gift-card multiplier run — stack on Apple/eBay/Ultimate cards.",
+    "editorialNote": "Classic gift-card multiplier run \u2014 stack on Apple/eBay/Ultimate cards.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-coles-flybuys-2000",
     "retailer": "Coles",
     "productOrBrand": "Storewide $50+ shop",
-    "programs": ["flybuys"],
+    "programs": [
+      "flybuys"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 10.0,
@@ -28,14 +32,16 @@
     "validFrom": "2026-07-15T00:00:00Z",
     "validTo": "2026-07-21T23:59:59Z",
     "sourceURL": "https://www.flybuys.com.au/coles",
-    "editorialNote": "10x Flybuys on a single shop — activate in the Flybuys app first.",
+    "editorialNote": "10x Flybuys on a single shop \u2014 activate in the Flybuys app first.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-amex-djs-50",
     "retailer": "David Jones",
     "productOrBrand": "$200+ spend",
-    "programs": ["amexMembershipRewards"],
+    "programs": [
+      "amexMembershipRewards"
+    ],
     "pointsType": "frequentFlyer",
     "offerKind": "discount",
     "multiplier": null,
@@ -44,14 +50,16 @@
     "validFrom": "2026-07-10T00:00:00Z",
     "validTo": "2026-08-15T23:59:59Z",
     "sourceURL": "https://www.americanexpress.com/en-au/benefits/amex-offers/",
-    "editorialNote": "Amex Offer — save to your eligible card in the Amex app before spending.",
+    "editorialNote": "Amex Offer \u2014 save to your eligible card in the Amex app before spending.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-officeworks-qff-5x",
     "retailer": "Officeworks",
     "productOrBrand": "Tech and computers",
-    "programs": ["qantasFF"],
+    "programs": [
+      "qantasFF"
+    ],
     "pointsType": "frequentFlyer",
     "offerKind": "multiplier",
     "multiplier": 5.0,
@@ -60,14 +68,16 @@
     "validFrom": "2026-07-12T00:00:00Z",
     "validTo": "2026-07-31T23:59:59Z",
     "sourceURL": "https://www.qantas.com/au/en/frequent-flyer/earn-points.html",
-    "editorialNote": "Earn via Qantas Shopping — click through the Qantas mall to track.",
+    "editorialNote": "Earn via Qantas Shopping \u2014 click through the Qantas mall to track.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-bws-er-10x",
     "retailer": "BWS",
     "productOrBrand": "Wine (excludes specials)",
-    "programs": ["everydayRewards"],
+    "programs": [
+      "everydayRewards"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 10.0,
@@ -76,14 +86,16 @@
     "validFrom": "2026-07-16T00:00:00Z",
     "validTo": "2026-07-22T23:59:59Z",
     "sourceURL": "https://bws.com.au/",
-    "editorialNote": "Everyday Rewards convert 2:1 to Qantas — decent value on a case buy.",
+    "editorialNote": "Everyday Rewards convert 2:1 to Qantas \u2014 decent value on a case buy.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-bigw-er-15x-toys",
     "retailer": "Big W",
     "productOrBrand": "Toys",
-    "programs": ["everydayRewards"],
+    "programs": [
+      "everydayRewards"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 15.0,
@@ -92,14 +104,16 @@
     "validFrom": "2026-07-17T00:00:00Z",
     "validTo": "2026-07-30T23:59:59Z",
     "sourceURL": "https://www.bigw.com.au/",
-    "editorialNote": "Toy Sale bonus points — pairs well with the half-price toy event.",
+    "editorialNote": "Toy Sale bonus points \u2014 pairs well with the half-price toy event.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-myer-one-10x",
     "retailer": "Myer",
     "productOrBrand": "Storewide (exclusions apply)",
-    "programs": ["myerOne"],
+    "programs": [
+      "myerOne"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 10.0,
@@ -108,14 +122,16 @@
     "validFrom": "2026-07-18T00:00:00Z",
     "validTo": "2026-07-24T23:59:59Z",
     "sourceURL": "https://www.myer.com.au/c/myer-one",
-    "editorialNote": "10x MYER one — 2000 points = $20 in Myer store credit.",
+    "editorialNote": "10x MYER one \u2014 2000 points = $20 in Myer store credit.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-priceline-sisterclub-5000",
     "retailer": "Priceline",
     "productOrBrand": "$50+ spend",
-    "programs": ["pricelineSisterClub"],
+    "programs": [
+      "pricelineSisterClub"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 5.0,
@@ -124,14 +140,16 @@
     "validFrom": "2026-07-15T00:00:00Z",
     "validTo": "2026-07-28T23:59:59Z",
     "sourceURL": "https://www.priceline.com.au/sister-club",
-    "editorialNote": "5x Sister Club points — check the app for a member-only bonus on top.",
+    "editorialNote": "5x Sister Club points \u2014 check the app for a member-only bonus on top.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-wow-er-3000-shop",
     "retailer": "Woolworths",
     "productOrBrand": "$80+ shop",
-    "programs": ["everydayRewards"],
+    "programs": [
+      "everydayRewards"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 8.0,
@@ -140,14 +158,17 @@
     "validFrom": "2026-07-16T00:00:00Z",
     "validTo": "2026-07-22T23:59:59Z",
     "sourceURL": "https://www.woolworths.com.au/shop/discover/rewards",
-    "editorialNote": "Boost this in the app before shopping — targeted, not everyone gets it.",
+    "editorialNote": "Boost this in the app before shopping \u2014 targeted, not everyone gets it.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-coles-express-velocity",
     "retailer": "Coles",
     "productOrBrand": "Fuel and convenience",
-    "programs": ["flybuys", "velocityFF"],
+    "programs": [
+      "flybuys",
+      "velocityFF"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 6.0,
@@ -156,14 +177,17 @@
     "validFrom": "2026-07-14T00:00:00Z",
     "validTo": "2026-08-10T23:59:59Z",
     "sourceURL": "https://www.flybuys.com.au/",
-    "editorialNote": "Flybuys convert 2:1 to Velocity — set up the transfer in your Flybuys account.",
+    "editorialNote": "Flybuys convert 2:1 to Velocity \u2014 set up the transfer in your Flybuys account.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-amex-qantas-earn",
     "retailer": "Amex",
     "productOrBrand": "Everyday spend",
-    "programs": ["amexMembershipRewards", "qantasFF"],
+    "programs": [
+      "amexMembershipRewards",
+      "qantasFF"
+    ],
     "pointsType": "frequentFlyer",
     "offerKind": "multiplier",
     "multiplier": 2.0,
@@ -179,7 +203,9 @@
     "id": "seed-onepass-catch-bonus",
     "retailer": "Catch",
     "productOrBrand": "OnePass members",
-    "programs": ["onePass"],
+    "programs": [
+      "onePass"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "discount",
     "multiplier": null,
@@ -195,7 +221,9 @@
     "id": "seed-qantas-wine-bonus",
     "retailer": "Qantas Wine",
     "productOrBrand": "First case",
-    "programs": ["qantasFF"],
+    "programs": [
+      "qantasFF"
+    ],
     "pointsType": "frequentFlyer",
     "offerKind": "multiplier",
     "multiplier": 8.0,
@@ -204,14 +232,16 @@
     "validFrom": "2026-07-13T00:00:00Z",
     "validTo": "2026-07-27T23:59:59Z",
     "sourceURL": "https://wine.qantas.com/",
-    "editorialNote": "Bonus Qantas Points on your first case — new-customer offers stack.",
+    "editorialNote": "Bonus Qantas Points on your first case \u2014 new-customer offers stack.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
     "id": "seed-velocity-shopping-4x",
     "retailer": "The Iconic",
     "productOrBrand": "Fashion",
-    "programs": ["velocityFF"],
+    "programs": [
+      "velocityFF"
+    ],
     "pointsType": "frequentFlyer",
     "offerKind": "multiplier",
     "multiplier": 4.0,
@@ -220,7 +250,7 @@
     "validFrom": "2026-07-15T00:00:00Z",
     "validTo": "2026-07-25T23:59:59Z",
     "sourceURL": "https://experiences.velocityfrequentflyer.com/shop",
-    "editorialNote": "Earn via the Velocity Shopping portal — click through before you buy.",
+    "editorialNote": "Earn via the Velocity Shopping portal \u2014 click through before you buy.",
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
@@ -243,7 +273,9 @@
     "id": "seed-everyday-market-er",
     "retailer": "Everyday Market",
     "productOrBrand": "Marketplace order",
-    "programs": ["everydayRewards"],
+    "programs": [
+      "everydayRewards"
+    ],
     "pointsType": "storeRewards",
     "offerKind": "multiplier",
     "multiplier": 10.0,
@@ -252,7 +284,97 @@
     "validFrom": "2026-07-14T00:00:00Z",
     "validTo": "2026-08-04T23:59:59Z",
     "sourceURL": "https://www.woolworths.com.au/shop/marketplace",
-    "editorialNote": "10x Everyday Rewards across Everyday Market sellers — free over $45.",
+    "editorialNote": "10x Everyday Rewards across Everyday Market sellers \u2014 free over $45.",
     "lastVerified": "2026-07-14T00:00:00Z"
+  },
+  {
+    "id": "ozb-costco-c9805fa39a",
+    "retailer": "Costco",
+    "productOrBrand": "Membership",
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "$20 Costco Shop Card with new membership",
+    "code": "WELCOME20",
+    "channel": "online",
+    "validFrom": "2026-07-14T07:13:21+00:00",
+    "validTo": "2026-07-31T14:00:00+00:00",
+    "sourceURL": "https://www.costco.com.au/content/membership-offer",
+    "editorialNote": "New Gold Star or Executive membership signup gets a $20 shop card using code online.",
+    "lastVerified": "2026-07-14T07:13:21+00:00"
+  },
+  {
+    "id": "ozb-card-gift-64477171d2",
+    "retailer": "Card.Gift",
+    "productOrBrand": "TCN Good Food/Cinema/Love/Shop Gift Cards",
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "10% off",
+    "code": "FEELING10",
+    "channel": "online",
+    "validFrom": "2026-07-10T15:14:26+00:00",
+    "validTo": "2026-07-17T13:59:00+00:00",
+    "sourceURL": "https://card.gift/landing/shop-10-gifts",
+    "editorialNote": "10% off select TCN gift cards (Good Food, Cinema, Love, Shop) with promo code, digital or physical delivery.",
+    "lastVerified": "2026-07-10T15:14:26+00:00"
+  },
+  {
+    "id": "ozb-flybuys-66fae6c206",
+    "retailer": "Flybuys",
+    "productOrBrand": "Velocity Frequent Flyer Points Transfer",
+    "programs": [
+      "flybuys",
+      "velocityFF"
+    ],
+    "pointsType": "storeRewards",
+    "offerKind": "multiplier",
+    "multiplier": 1.15,
+    "discountText": null,
+    "code": null,
+    "channel": "online",
+    "validFrom": "2026-06-30T21:40:03+00:00",
+    "validTo": "2026-07-28T14:00:00+00:00",
+    "sourceURL": "https://experience.flybuys.com.au/partners/velocity-frequent-flyer/",
+    "editorialNote": "15% bonus on first automatic Flybuys-to-Velocity points transfer, 5% bonus on next manual transfer.",
+    "lastVerified": "2026-06-30T21:40:03+00:00"
+  },
+  {
+    "id": "ozb-coles-ba3470ed58",
+    "retailer": "Coles",
+    "productOrBrand": "TCN Her, Restaurant, Teen and Party Gift Cards",
+    "programs": [
+      "flybuys"
+    ],
+    "pointsType": "storeRewards",
+    "offerKind": "multiplier",
+    "multiplier": 41.0,
+    "discountText": null,
+    "code": null,
+    "channel": "both",
+    "validFrom": "2026-07-15T07:00:01+00:00",
+    "validTo": "2026-07-28T14:00:00+00:00",
+    "sourceURL": "https://www.coles.com.au/catalogues/",
+    "editorialNote": "Bonus Flybuys points when buying select gift cards at Coles; best rate ~41x points per dollar on the $25 TCN Party card.",
+    "lastVerified": "2026-07-15T07:00:01+00:00"
+  },
+  {
+    "id": "ozb-the-good-guys-c0cf67e99f",
+    "retailer": "The Good Guys",
+    "productOrBrand": null,
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "$30 off $150 spend",
+    "code": null,
+    "channel": "inStore",
+    "validFrom": "2026-07-15T23:48:06+00:00",
+    "validTo": "2026-07-26T14:00:00+00:00",
+    "sourceURL": "https://www.thegoodguys.com.au/",
+    "editorialNote": "Targeted SMS offer with a unique code; exclusions apply and it's in-store only.",
+    "lastVerified": "2026-07-15T23:48:06+00:00"
   }
 ]
