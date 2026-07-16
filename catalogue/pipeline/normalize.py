@@ -50,8 +50,13 @@ SKIP (return {"skip": true, "reason": "<short reason>"}) if it is: a one-off pri
 on a SINGLE product or model (e.g. "Duracell 4-pack $7.90", "Logitech mouse $49") even at \
 a named retailer — these are NOT codes; cashback-only with no points and no code (e.g. \
 ShopBack/TopCashback); a marketplace/third-party reseller with no clear retailer; \
-price-error/clearance; freebies; or anything too vague to map. When in doubt about \
-whether a discount is store-wide vs a single-product price, SKIP.
+price-error/clearance; freebies; a TARGETED/PERSONALIZED offer — a unique per-user code, \
+a code sent by SMS/email to specific customers, or language like "targeted", "selected \
+accounts", "account-specific", "unique code", "personalized" (these codes are not usable \
+by the general public, so they don't belong in a shared catalogue); or anything too vague \
+to map. A promo only belongs in the catalogue if ANY member of the public can use the \
+stated code/offer. When in doubt about whether a discount is store-wide vs a single-product \
+price, or whether an offer is public vs targeted, SKIP.
 
 Return a single JSON object with EXACTLY these fields:
 {
