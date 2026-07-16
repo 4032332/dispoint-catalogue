@@ -28,13 +28,22 @@ def format_programs(promo: dict) -> str:
 
 def render_table(promos: list[dict]) -> str:
     if not promos:
-        return "No new candidate promos this week."
+        return "Catalogue is empty this week — nothing to review."
+
+    new_count = sum(1 for p in promos if p.get("_isNew"))
+    header = (
+        f"**This week's catalogue — {len(promos)} promo(s), {new_count} new.** "
+        "Rows marked 🆕 were added this run; the rest carried over and are still valid. "
+        "Scan the whole list, drop any row that looks wrong, then merge.\n"
+    )
 
     lines = [
-        "| Retailer | Offer | Code | Programs | Valid to | Source | Confidence |",
-        "|---|---|---|---|---|---|---|",
+        header,
+        "| New | Retailer | Offer | Code | Programs | Valid to | Source | Confidence |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for promo in promos:
+        is_new = "🆕" if promo.get("_isNew") else ""
         retailer = escape_md(promo.get("retailer", ""))
         offer = escape_md(format_offer(promo))
         code = escape_md(promo.get("code") or "—")
@@ -44,7 +53,7 @@ def render_table(promos: list[dict]) -> str:
         source_cell = f"[link]({source})" if source else "—"
         confidence = promo.get("_confidence")
         confidence_cell = f"{confidence:.2f}" if isinstance(confidence, (int, float)) else "—"
-        lines.append(f"| {retailer} | {offer} | {code} | {programs} | {valid_to} | {source_cell} | {confidence_cell} |")
+        lines.append(f"| {is_new} | {retailer} | {offer} | {code} | {programs} | {valid_to} | {source_cell} | {confidence_cell} |")
 
     return "\n".join(lines)
 

@@ -29,6 +29,7 @@ import fetch  # noqa: E402
 import normalize  # noqa: E402
 import dedupe_merge  # noqa: E402
 import render_pr  # noqa: E402
+import roll_catalogue  # noqa: E402
 import validate  # noqa: E402
 
 
@@ -427,7 +428,77 @@ class RenderPrTests(unittest.TestCase):
 
     def test_empty_list_renders_placeholder(self):
         table = render_pr.render_table([])
-        self.assertIn("No new candidate promos", table)
+        self.assertIn("Catalogue is empty", table)
+
+    def test_new_rows_are_flagged(self):
+        promos = [
+            {"retailer": "Coles", "offerKind": "multiplier", "multiplier": 20.0,
+             "programs": ["flybuys"], "validTo": "2026-08-01T00:00:00Z",
+             "sourceURL": "https://example.com/c", "_isNew": True},
+            {"retailer": "Kathmandu", "offerKind": "discount", "discountText": "25% off",
+             "programs": [], "validTo": "2026-07-23T00:00:00Z",
+             "sourceURL": "https://example.com/k", "_isNew": False},
+        ]
+        table = render_pr.render_table(promos)
+        self.assertIn("🆕", table)
+        self.assertIn("1 new", table)
+
+
+class RollCatalogueTests(unittest.TestCase):
+    NOW = datetime(2026, 7, 16, tzinfo=timezone.utc)
+
+    def _promo(self, pid, days, is_new_conf=None, kind="discount"):
+        valid_to = (self.NOW + timedelta(days=days)).isoformat()
+        p = {"id": pid, "retailer": pid, "offerKind": kind,
+             "discountText": "10% off", "multiplier": None, "programs": [],
+             "pointsType": "storeRewards", "validTo": valid_to,
+             "validFrom": self.NOW.isoformat(), "sourceURL": "https://x.com",
+             "channel": None, "editorialNote": None, "lastVerified": self.NOW.isoformat(),
+             "productOrBrand": None}
+        if is_new_conf is not None:
+            p["_confidence"] = is_new_conf
+        return p
+
+    def test_expired_live_promos_are_dropped(self):
+        live = [self._promo("keep", 10), self._promo("gone", -1)]
+        rolled = roll_catalogue.roll(live, [], self.NOW, target=10)
+        ids = {p["id"] for p in rolled}
+        self.assertIn("keep", ids)
+        self.assertNotIn("gone", ids)
+
+    def test_expired_new_candidate_is_dropped(self):
+        rolled = roll_catalogue.roll([], [self._promo("old", -2, 0.9)], self.NOW, target=10)
+        self.assertEqual(rolled, [])
+
+    def test_caps_at_target(self):
+        live = [self._promo(f"p{i}", 30 + i) for i in range(20)]
+        rolled = roll_catalogue.roll(live, [], self.NOW, target=10)
+        self.assertEqual(len(rolled), 10)
+
+    def test_new_take_priority_over_survivors(self):
+        live = [self._promo(f"old{i}", 30) for i in range(10)]
+        new = [self._promo("fresh", 5, 0.9)]
+        rolled = roll_catalogue.roll(live, new, self.NOW, target=10)
+        ids = {p["id"] for p in rolled}
+        self.assertIn("fresh", ids)
+        self.assertEqual(len(rolled), 10)
+
+    def test_new_flag_and_internal_fields_present_on_roll(self):
+        new = [self._promo("fresh", 5, 0.9)]
+        rolled = roll_catalogue.roll([], new, self.NOW, target=10)
+        self.assertTrue(rolled[0]["_isNew"])
+        self.assertEqual(rolled[0]["_confidence"], 0.9)
+
+    def test_strip_internal_removes_underscore_fields(self):
+        cleaned = roll_catalogue.strip_internal({"id": "x", "_confidence": 0.9, "_isNew": True})
+        self.assertEqual(cleaned, {"id": "x"})
+
+    def test_dedup_between_new_and_live_by_id(self):
+        shared = self._promo("dup", 20, 0.9)
+        live = [dict(shared)]
+        new = [dict(shared)]
+        rolled = roll_catalogue.roll(live, new, self.NOW, target=10)
+        self.assertEqual(len([p for p in rolled if p["id"] == "dup"]), 1)
 
 
 if __name__ == "__main__":
