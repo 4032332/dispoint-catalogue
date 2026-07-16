@@ -1,0 +1,38 @@
+[
+  {
+    "skip": true,
+    "reason": "cashback offer, not a points/loyalty deal"
+  },
+  {
+    "retailer": "Coles",
+    "productOrBrand": "TCN gift cards",
+    "programs": ["flybuys"],
+    "pointsType": "storeRewards",
+    "offerKind": "multiplier",
+    "multiplier": 41.0,
+    "discountText": null,
+    "channel": "inStore",
+    "editorialNote": "1,000 bonus Flybuys points on select gift cards.",
+    "confidence": 0.9
+  },
+  {
+    "skip": true,
+    "reason": "cashback offer, not a points/loyalty deal"
+  },
+  {
+    "skip": true,
+    "reason": "membership bonus shop card, not a points program"
+  },
+  {
+    "skip": true,
+    "reason": "membership bonus shop card, not a points program"
+  },
+  {
+    "skip": true,
+    "reason": "cashback offer, not a points/loyalty deal"
+  },
+  {
+    "skip": true,
+    "reason": "percent-off promo code, not a points/loyalty deal"
+  }
+]

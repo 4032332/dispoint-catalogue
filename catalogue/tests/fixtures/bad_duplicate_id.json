@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dup-id",
+    "retailer": "Retailer A",
+    "productOrBrand": null,
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "10% off",
+    "channel": "online",
+    "validFrom": "2026-07-01T00:00:00Z",
+    "validTo": "2026-07-31T00:00:00Z",
+    "sourceURL": "https://example.com/a",
+    "editorialNote": null,
+    "lastVerified": "2026-07-01T00:00:00Z"
+  },
+  {
+    "id": "dup-id",
+    "retailer": "Retailer B",
+    "productOrBrand": null,
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "20% off",
+    "channel": "online",
+    "validFrom": "2026-07-01T00:00:00Z",
+    "validTo": "2026-07-31T00:00:00Z",
+    "sourceURL": "https://example.com/b",
+    "editorialNote": null,
+    "lastVerified": "2026-07-01T00:00:00Z"
+  }
+]

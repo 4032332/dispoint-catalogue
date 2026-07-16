@@ -1,0 +1,18 @@
+[
+  {
+    "id": "bad-3",
+    "retailer": "Test Retailer",
+    "productOrBrand": null,
+    "programs": ["notARealProgram"],
+    "pointsType": "storeRewards",
+    "offerKind": "multiplier",
+    "multiplier": 10.0,
+    "discountText": null,
+    "channel": "both",
+    "validFrom": "2026-07-01T00:00:00Z",
+    "validTo": "2026-07-31T00:00:00Z",
+    "sourceURL": "https://example.com/",
+    "editorialNote": null,
+    "lastVerified": "2026-07-01T00:00:00Z"
+  }
+]

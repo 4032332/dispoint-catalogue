@@ -1,0 +1,87 @@
+name: Weekly catalogue sourcing
+
+on:
+  schedule:
+    # Sunday 20:00 UTC
+    - cron: "0 20 * * 0"
+  workflow_dispatch: {}
+
+jobs:
+  source-catalogue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install anthropic defusedxml
+
+      - name: Fetch candidates
+        run: python3 catalogue/pipeline/fetch.py > /tmp/raw_candidates.json
+
+      - name: Normalize candidates via Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 catalogue/pipeline/normalize.py < /tmp/raw_candidates.json > /tmp/normalized.json
+
+      - name: Dedupe against live catalogue
+        run: |
+          python3 catalogue/pipeline/dedupe_merge.py \
+            --catalogue catalogue/catalogue.json \
+            --candidates /tmp/normalized.json \
+            > /tmp/new_candidates.json
+
+      - name: Check for new candidates
+        id: check
+        run: |
+          COUNT=$(python3 -c "import json; print(len(json.load(open('/tmp/new_candidates.json'))))")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Merge new candidates into catalogue.json
+        if: steps.check.outputs.count != '0'
+        run: |
+          python3 - <<'EOF'
+          import json
+
+          with open("catalogue/catalogue.json") as f:
+              live = json.load(f)
+          with open("/tmp/new_candidates.json") as f:
+              new = json.load(f)
+
+          # Strip internal-only fields (e.g. _confidence) before writing to the
+          # published catalogue.
+          cleaned = [{k: v for k, v in promo.items() if not k.startswith("_")} for promo in new]
+
+          merged = live + cleaned
+          with open("catalogue/catalogue.json", "w") as f:
+              json.dump(merged, f, indent=2)
+              f.write("\n")
+          EOF
+
+      - name: Validate merged catalogue
+        if: steps.check.outputs.count != '0'
+        run: python3 catalogue/pipeline/validate.py catalogue/catalogue.json
+
+      - name: Render PR body
+        if: steps.check.outputs.count != '0'
+        run: python3 catalogue/pipeline/render_pr.py /tmp/new_candidates.json > /tmp/pr_body.md
+
+      - name: Create Pull Request
+        if: steps.check.outputs.count != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "catalogue: weekly sourcing run"
+          branch: catalogue/weekly-update
+          delete-branch: true
+          title: "Weekly catalogue update (${{ steps.check.outputs.count }} new candidate promos)"
+          body-path: /tmp/pr_body.md
+          add-paths: catalogue/catalogue.json
