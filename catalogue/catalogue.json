@@ -1,77 +1,22 @@
 [
   {
-    "id": "ozb-woolworths-c1325183a3-2",
-    "retailer": "Woolworths",
-    "productOrBrand": "Ultimate Him, Webjet, David Jones, Timezone, Drummond Golf, Peter Alexander & RedBalloon Gift Cards",
-    "programs": [
-      "everydayRewards"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "multiplier",
-    "multiplier": 20.0,
-    "discountText": null,
-    "code": null,
-    "channel": "inStore",
-    "validFrom": "2026-08-21T10:15:04+00:00",
-    "validTo": "2026-09-01T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Buy select gift cards at Woolworths to earn 20x Everyday Rewards points, effectively 10% back.",
-    "lastVerified": "2026-08-21T10:15:04+00:00"
-  },
-  {
-    "id": "ozb-seats-aero-821e6401d5",
-    "retailer": "Seats.aero",
-    "productOrBrand": "Pro Plan subscription",
-    "programs": [],
-    "pointsType": "storeRewards",
-    "offerKind": "discount",
-    "multiplier": null,
-    "discountText": "20% off annual plan",
-    "code": "AUGUST20",
-    "channel": "online",
-    "validFrom": "2026-08-19T03:45:52+00:00",
-    "validTo": "2026-08-31T14:00:00+00:00",
-    "sourceURL": "https://seats.aero/register",
-    "editorialNote": "20% off a new or renewed annual Pro plan using code AUGUST20.",
-    "lastVerified": "2026-08-19T03:45:52+00:00"
-  },
-  {
-    "id": "ozb-woolworths-c1325183a3",
-    "retailer": "Woolworths",
-    "productOrBrand": "TCN Gift Cards (Him, Pub & Bar, Good Food, Active, Holiday & Hotel, DoorDash)",
-    "programs": [
-      "everydayRewards"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "discount",
-    "multiplier": null,
-    "discountText": "10% off",
-    "code": null,
-    "channel": "inStore",
-    "validFrom": "2026-08-27T06:30:05+00:00",
-    "validTo": "2026-09-08T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Requires scanning Everyday Rewards card in-store to receive discount.",
-    "lastVerified": "2026-08-27T06:30:05+00:00"
-  },
-  {
-    "id": "ozb-qantas-5ef528736c",
+    "id": "ozb-qantas-8212f83744",
     "retailer": "Qantas",
-    "productOrBrand": "Flights",
+    "productOrBrand": null,
     "programs": [
-      "qantasFF"
+      "amexMembershipRewards"
     ],
-    "pointsType": "frequentFlyer",
-    "offerKind": "multiplier",
-    "multiplier": 2.0,
-    "discountText": null,
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "$100 off $500 spend",
     "code": null,
     "channel": "online",
-    "validFrom": "2026-08-25T14:15:40+00:00",
-    "validTo": "2026-09-02T13:59:00+00:00",
-    "sourceURL": "https://www.qantas.com/en-us/frequent-flyer/member-offers/twice-as-rewarding",
-    "editorialNote": "Requires activation before booking eligible flights for travel between 3 Sep 2026 and 14 Aug 2027.",
-    "lastVerified": "2026-08-25T14:15:40+00:00"
+    "validFrom": "2026-08-31T23:10:00+00:00",
+    "validTo": "2026-09-30T14:00:00+00:00",
+    "sourceURL": "https://www.americanexpress.com/en-au/",
+    "editorialNote": "Save the Amex offer to your card, then spend $500+ online at Qantas for a $100 statement credit; capped to first 5,000 cards.",
+    "lastVerified": "2026-08-31T23:10:00+00:00"
   },
   {
     "id": "seed-amex-qantas-earn",
@@ -93,21 +38,22 @@
     "lastVerified": "2026-07-14T00:00:00Z"
   },
   {
-    "id": "seed-onepass-catch-bonus",
-    "retailer": "Catch",
-    "productOrBrand": "OnePass members",
+    "id": "ozb-woolworths-c1325183a3",
+    "retailer": "Woolworths",
+    "productOrBrand": "TCN Gift Cards (Him, Pub & Bar, Good Food, Active, Holiday & Hotel, DoorDash)",
     "programs": [
-      "onePass"
+      "everydayRewards"
     ],
     "pointsType": "storeRewards",
     "offerKind": "discount",
     "multiplier": null,
-    "discountText": "Free delivery + bonus",
-    "channel": "online",
-    "validFrom": "2026-07-14T00:00:00Z",
-    "validTo": "2026-08-31T23:59:59Z",
-    "sourceURL": "https://www.onepass.com.au/",
-    "editorialNote": "OnePass covers Catch, Kmart, Target and Bunnings delivery.",
-    "lastVerified": "2026-07-14T00:00:00Z"
+    "discountText": "10% off",
+    "code": null,
+    "channel": "inStore",
+    "validFrom": "2026-08-27T06:30:05+00:00",
+    "validTo": "2026-09-08T14:00:00+00:00",
+    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
+    "editorialNote": "Requires scanning Everyday Rewards card in-store to receive discount.",
+    "lastVerified": "2026-08-27T06:30:05+00:00"
   }
 ]
