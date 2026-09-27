@@ -1,8 +1,8 @@
 [
   {
-    "id": "ozb-woolworths-c1325183a3-2",
+    "id": "ozb-woolworths-b2f2ae401b",
     "retailer": "Woolworths",
-    "productOrBrand": "Ultimate Him, Webjet, David Jones, Timezone, Drummond Golf, Peter Alexander & RedBalloon Gift Cards",
+    "productOrBrand": "TCN Gift Cards (Teen, Baby, Gift, Pub & Bar, Restaurant, Event/Village Cinema)",
     "programs": [
       "everydayRewards"
     ],
@@ -11,67 +11,65 @@
     "multiplier": 20.0,
     "discountText": null,
     "code": null,
-    "channel": "inStore",
-    "validFrom": "2026-08-21T10:15:04+00:00",
-    "validTo": "2026-09-01T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Buy select gift cards at Woolworths to earn 20x Everyday Rewards points, effectively 10% back.",
-    "lastVerified": "2026-08-21T10:15:04+00:00"
+    "channel": "both",
+    "validFrom": "2026-09-24T07:00:04+00:00",
+    "validTo": "2026-10-06T13:00:00+00:00",
+    "sourceURL": "https://www.woolworths.com.au/shop/catalogue",
+    "editorialNote": "Gift card points multiplier equating to roughly 10% back in Everyday Rewards points.",
+    "lastVerified": "2026-09-24T07:00:04+00:00"
   },
   {
-    "id": "ozb-seats-aero-821e6401d5",
-    "retailer": "Seats.aero",
-    "productOrBrand": "Pro Plan subscription",
+    "id": "ozb-nike-9b532935ca",
+    "retailer": "Nike",
+    "productOrBrand": "Apparel & Footwear",
     "programs": [],
     "pointsType": "storeRewards",
     "offerKind": "discount",
     "multiplier": null,
-    "discountText": "20% off annual plan",
-    "code": "AUGUST20",
-    "channel": "online",
-    "validFrom": "2026-08-19T03:45:52+00:00",
-    "validTo": "2026-08-31T14:00:00+00:00",
-    "sourceURL": "https://seats.aero/register",
-    "editorialNote": "20% off a new or renewed annual Pro plan using code AUGUST20.",
-    "lastVerified": "2026-08-19T03:45:52+00:00"
-  },
-  {
-    "id": "ozb-woolworths-c1325183a3",
-    "retailer": "Woolworths",
-    "productOrBrand": "TCN Gift Cards (Him, Pub & Bar, Good Food, Active, Holiday & Hotel, DoorDash)",
-    "programs": [
-      "everydayRewards"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "discount",
-    "multiplier": null,
-    "discountText": "10% off",
+    "discountText": "Extra 50% off apparel & footwear, 30% off accessories",
     "code": null,
     "channel": "inStore",
-    "validFrom": "2026-08-27T06:30:05+00:00",
-    "validTo": "2026-09-08T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Requires scanning Everyday Rewards card in-store to receive discount.",
-    "lastVerified": "2026-08-27T06:30:05+00:00"
+    "validFrom": "2026-09-27T08:14:10+00:00",
+    "validTo": "2026-10-05T13:00:00+00:00",
+    "sourceURL": "https://www.harbourtownadelaide.com.au/stores/nike",
+    "editorialNote": "In-store only at Nike Outlet/DFO locations, storewide markdown.",
+    "lastVerified": "2026-09-27T08:14:10+00:00"
   },
   {
-    "id": "ozb-qantas-5ef528736c",
-    "retailer": "Qantas",
-    "productOrBrand": "Flights",
+    "id": "ozb-qantas-insurance-584b6ccfff",
+    "retailer": "Qantas Insurance",
+    "productOrBrand": "Car Insurance",
     "programs": [
       "qantasFF"
     ],
     "pointsType": "frequentFlyer",
-    "offerKind": "multiplier",
-    "multiplier": 2.0,
-    "discountText": null,
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "15% off first year premium",
     "code": null,
     "channel": "online",
-    "validFrom": "2026-08-25T14:15:40+00:00",
-    "validTo": "2026-09-02T13:59:00+00:00",
-    "sourceURL": "https://www.qantas.com/en-us/frequent-flyer/member-offers/twice-as-rewarding",
-    "editorialNote": "Requires activation before booking eligible flights for travel between 3 Sep 2026 and 14 Aug 2027.",
-    "lastVerified": "2026-08-25T14:15:40+00:00"
+    "validFrom": "2026-09-23T14:59:34+00:00",
+    "validTo": "2026-11-25T13:00:00+00:00",
+    "sourceURL": "https://insurance.qantas.com/car-insurance?gad_campaignid=7285970794&gad_source=1&gbraid=0AAAAACrZWxGKQV6wVULsVGH&gclsrc=aw.ds",
+    "editorialNote": "Also earn up to 35,000 Qantas Points per policy; requires Qantas Frequent Flyer membership.",
+    "lastVerified": "2026-09-23T14:59:34+00:00"
+  },
+  {
+    "id": "ozb-uber-eats-87828ac7b4",
+    "retailer": "Uber Eats",
+    "productOrBrand": null,
+    "programs": [],
+    "pointsType": "storeRewards",
+    "offerKind": "discount",
+    "multiplier": null,
+    "discountText": "$25 off $75+",
+    "code": null,
+    "channel": "online",
+    "validFrom": "2026-09-27T05:47:08+00:00",
+    "validTo": "2026-10-01T14:00:00+00:00",
+    "sourceURL": "https://uber.com/",
+    "editorialNote": "Available to Uber One members on eligible delivery orders.",
+    "lastVerified": "2026-09-27T05:47:08+00:00"
   },
   {
     "id": "seed-amex-qantas-earn",
@@ -90,24 +88,6 @@
     "validTo": "2026-09-30T23:59:59Z",
     "sourceURL": "https://www.americanexpress.com/en-au/rewards/membership-rewards/",
     "editorialNote": "Membership Rewards transfer 1:1 to Qantas/Velocity on eligible cards.",
-    "lastVerified": "2026-07-14T00:00:00Z"
-  },
-  {
-    "id": "seed-onepass-catch-bonus",
-    "retailer": "Catch",
-    "productOrBrand": "OnePass members",
-    "programs": [
-      "onePass"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "discount",
-    "multiplier": null,
-    "discountText": "Free delivery + bonus",
-    "channel": "online",
-    "validFrom": "2026-07-14T00:00:00Z",
-    "validTo": "2026-08-31T23:59:59Z",
-    "sourceURL": "https://www.onepass.com.au/",
-    "editorialNote": "OnePass covers Catch, Kmart, Target and Bunnings delivery.",
     "lastVerified": "2026-07-14T00:00:00Z"
   }
 ]
