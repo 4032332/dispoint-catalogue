@@ -46,6 +46,21 @@ ALLOWED_POINTS_TYPES = {"storeRewards", "frequentFlyer"}
 ALLOWED_OFFER_KINDS = {"multiplier", "discount"}
 ALLOWED_CHANNELS = {"online", "inStore", "both", None}
 
+# The catalogue publishes to every user with no human review, so free text is
+# bounded and URLs are held to https with nothing that could smuggle markup.
+MAX_TEXT_LENGTH = {
+    "retailer": 60,
+    "productOrBrand": 120,
+    "discountText": 120,
+    "editorialNote": 280,
+    "code": 40,
+}
+MAX_URL_LENGTH = 500
+MIN_PROMOS = 1
+MAX_MULTIPLIER = 200
+_CONTROL_CHARS = re.compile(r"[\x00-\x1f\x7f]")
+_URL_FORBIDDEN = re.compile(r"[\s<>\"'`\[\](){}\\^|]")
+
 
 def parse_iso(value, field_name: str, errors: list[str], index: int) -> datetime | None:
     if not isinstance(value, str):
@@ -62,9 +77,17 @@ def validate_url(url, field_name: str, errors: list[str], index: int) -> None:
     if not isinstance(url, str) or not url:
         errors.append(f"[{index}] {field_name} must be a non-empty string")
         return
+    if len(url) > MAX_URL_LENGTH:
+        errors.append(f"[{index}] {field_name} longer than {MAX_URL_LENGTH} chars")
+        return
+    if _URL_FORBIDDEN.search(url) or _CONTROL_CHARS.search(url):
+        errors.append(f"[{index}] {field_name} contains forbidden characters: {url!r}")
+        return
     parsed = urlparse(url)
-    if parsed.scheme not in ("http", "https") or not parsed.netloc:
-        errors.append(f"[{index}] {field_name} is not a well-formed http(s) URL: {url!r}")
+    if parsed.scheme != "https" or not parsed.hostname or "." not in parsed.hostname:
+        errors.append(f"[{index}] {field_name} must be a well-formed https URL: {url!r}")
+    elif parsed.username or parsed.password or parsed.port:
+        errors.append(f"[{index}] {field_name} must not contain credentials or a port: {url!r}")
 
 
 def validate_promo(promo: dict, index: int) -> list[str]:
@@ -138,6 +161,18 @@ def validate_promo(promo: dict, index: int) -> list[str]:
     if code is not None and not isinstance(code, str):
         errors.append(f"[{index}] code must be a string or null")
 
+    for field, limit in MAX_TEXT_LENGTH.items():
+        value = promo.get(field)
+        if isinstance(value, str):
+            if len(value) > limit:
+                errors.append(f"[{index}] {field} longer than {limit} chars")
+            if _CONTROL_CHARS.search(value):
+                errors.append(f"[{index}] {field} contains control characters")
+
+    if offer_kind == "multiplier" and isinstance(multiplier, (int, float)) and not isinstance(multiplier, bool):
+        if not (0 < multiplier <= MAX_MULTIPLIER):
+            errors.append(f"[{index}] multiplier must be in (0, {MAX_MULTIPLIER}], got {multiplier}")
+
     return errors
 
 
@@ -146,6 +181,8 @@ def validate_catalogue(promos) -> list[str]:
 
     if not isinstance(promos, list):
         return ["catalogue.json root must be a JSON array"]
+    if len(promos) < MIN_PROMOS:
+        return [f"catalogue must contain at least {MIN_PROMOS} promo (refusing to publish an empty board)"]
 
     ids = []
     for i, promo in enumerate(promos):
