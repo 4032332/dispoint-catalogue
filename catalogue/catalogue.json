@@ -1,113 +1,57 @@
 [
   {
-    "id": "ozb-woolworths-c1325183a3-2",
-    "retailer": "Woolworths",
-    "productOrBrand": "Ultimate Him, Webjet, David Jones, Timezone, Drummond Golf, Peter Alexander & RedBalloon Gift Cards",
-    "programs": [
-      "everydayRewards"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "multiplier",
-    "multiplier": 20.0,
-    "discountText": null,
-    "code": null,
-    "channel": "inStore",
-    "validFrom": "2026-08-21T10:15:04+00:00",
-    "validTo": "2026-09-01T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Buy select gift cards at Woolworths to earn 20x Everyday Rewards points, effectively 10% back.",
-    "lastVerified": "2026-08-21T10:15:04+00:00"
-  },
-  {
-    "id": "ozb-seats-aero-821e6401d5",
-    "retailer": "Seats.aero",
-    "productOrBrand": "Pro Plan subscription",
+    "id": "ozb-amazon-au-627073148a",
+    "retailer": "Amazon AU",
+    "productOrBrand": "Amazon Gift Card",
     "programs": [],
     "pointsType": "storeRewards",
     "offerKind": "discount",
     "multiplier": null,
-    "discountText": "20% off annual plan",
-    "code": "AUGUST20",
+    "discountText": "$10 off $250 gift card spend",
+    "code": "GCOCT10",
     "channel": "online",
-    "validFrom": "2026-08-19T03:45:52+00:00",
-    "validTo": "2026-08-31T14:00:00+00:00",
-    "sourceURL": "https://seats.aero/register",
-    "editorialNote": "20% off a new or renewed annual Pro plan using code AUGUST20.",
-    "lastVerified": "2026-08-19T03:45:52+00:00"
+    "validFrom": "2026-10-19T07:14:26+00:00",
+    "validTo": "2026-10-31T12:59:00+00:00",
+    "sourceURL": "https://www.amazon.com.au/b/10290110051",
+    "editorialNote": "Limited to the first 5,000 orders; applies to Amazon.com.au Gift Card purchases.",
+    "lastVerified": "2026-10-19T07:14:26+00:00"
   },
   {
-    "id": "ozb-woolworths-c1325183a3",
+    "id": "ozb-virgin-australia-33d5c6c716",
+    "retailer": "Virgin Australia",
+    "productOrBrand": null,
+    "programs": [
+      "velocityFF"
+    ],
+    "pointsType": "frequentFlyer",
+    "offerKind": "multiplier",
+    "multiplier": 2.0,
+    "discountText": null,
+    "code": null,
+    "channel": "online",
+    "validFrom": "2026-10-11T19:30:59+00:00",
+    "validTo": "2026-10-26T13:59:00+00:00",
+    "sourceURL": "https://www.velocityfrequentflyer.com/partners-offers/airlines/virgin-australia-airlines/pick-your-bonus-oct-2026",
+    "editorialNote": "Activation required; choose double Points or double Status Credits for eligible flights.",
+    "lastVerified": "2026-10-11T19:30:59+00:00"
+  },
+  {
+    "id": "ozb-woolworths-968e825751",
     "retailer": "Woolworths",
-    "productOrBrand": "TCN Gift Cards (Him, Pub & Bar, Good Food, Active, Holiday & Hotel, DoorDash)",
+    "productOrBrand": "Everyday WISH eGift Card",
     "programs": [
       "everydayRewards"
     ],
     "pointsType": "storeRewards",
     "offerKind": "discount",
     "multiplier": null,
-    "discountText": "10% off",
-    "code": null,
-    "channel": "inStore",
-    "validFrom": "2026-08-27T06:30:05+00:00",
-    "validTo": "2026-09-08T14:00:00+00:00",
-    "sourceURL": "https://www.woolworths.com.au/shop/catalogue/",
-    "editorialNote": "Requires scanning Everyday Rewards card in-store to receive discount.",
-    "lastVerified": "2026-08-27T06:30:05+00:00"
-  },
-  {
-    "id": "ozb-qantas-5ef528736c",
-    "retailer": "Qantas",
-    "productOrBrand": "Flights",
-    "programs": [
-      "qantasFF"
-    ],
-    "pointsType": "frequentFlyer",
-    "offerKind": "multiplier",
-    "multiplier": 2.0,
-    "discountText": null,
+    "discountText": "4% off ($100 minimum spend, max 1 per customer per week)",
     "code": null,
     "channel": "online",
-    "validFrom": "2026-08-25T14:15:40+00:00",
-    "validTo": "2026-09-02T13:59:00+00:00",
-    "sourceURL": "https://www.qantas.com/en-us/frequent-flyer/member-offers/twice-as-rewarding",
-    "editorialNote": "Requires activation before booking eligible flights for travel between 3 Sep 2026 and 14 Aug 2027.",
-    "lastVerified": "2026-08-25T14:15:40+00:00"
-  },
-  {
-    "id": "seed-amex-qantas-earn",
-    "retailer": "Amex",
-    "productOrBrand": "Everyday spend",
-    "programs": [
-      "amexMembershipRewards",
-      "qantasFF"
-    ],
-    "pointsType": "frequentFlyer",
-    "offerKind": "multiplier",
-    "multiplier": 2.0,
-    "discountText": null,
-    "channel": "both",
-    "validFrom": "2026-07-01T00:00:00Z",
-    "validTo": "2026-09-30T23:59:59Z",
-    "sourceURL": "https://www.americanexpress.com/en-au/rewards/membership-rewards/",
-    "editorialNote": "Membership Rewards transfer 1:1 to Qantas/Velocity on eligible cards.",
-    "lastVerified": "2026-07-14T00:00:00Z"
-  },
-  {
-    "id": "seed-onepass-catch-bonus",
-    "retailer": "Catch",
-    "productOrBrand": "OnePass members",
-    "programs": [
-      "onePass"
-    ],
-    "pointsType": "storeRewards",
-    "offerKind": "discount",
-    "multiplier": null,
-    "discountText": "Free delivery + bonus",
-    "channel": "online",
-    "validFrom": "2026-07-14T00:00:00Z",
-    "validTo": "2026-08-31T23:59:59Z",
-    "sourceURL": "https://www.onepass.com.au/",
-    "editorialNote": "OnePass covers Catch, Kmart, Target and Bunnings delivery.",
-    "lastVerified": "2026-07-14T00:00:00Z"
+    "validFrom": "2026-10-18T13:19:54+00:00",
+    "validTo": "2026-11-15T12:59:00+00:00",
+    "sourceURL": "https://www.everyday.com.au/gift-cards/everyday-wish-gift-card-9532f9a0-3a79-4e51-8edf-05fe05589461",
+    "editorialNote": "Discount on Everyday WISH gift cards, limited to one redemption per customer per week.",
+    "lastVerified": "2026-10-18T13:19:54+00:00"
   }
 ]
